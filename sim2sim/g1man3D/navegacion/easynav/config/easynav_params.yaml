@@ -1,0 +1,108 @@
+# ============================================================================
+# easynav_params.yaml
+# ============================================================================
+# Parámetros de EasyNavigation (SimpleStack) adaptados al robot G1.
+#
+# Este archivo configura los cinco nodos internos del binario system_main:
+#   - controller_node  (Serest: seguimiento de trayectoria)
+#   - localizer_node   (AMCL simple: localización probabilística)
+#   - maps_manager_node (Simple: carga de mapa PGM binario)
+#   - planner_node     (Simple: planner A* sobre mapa binario)
+#   - sensors_node     (configuración del LiDAR)
+#   - system_node      (tolerancias globales)
+#
+# NOTAS IMPORTANTES PARA EL G1:
+#   * El G1 es omnidireccional (puede strafear), pero Serest asume un
+#     robot tipo diferencial/Ackermann. Se dejan límites modestos.
+#   * robot_radius: 0.30 m (igual que en nav2_params.yaml).
+#   * El topic de escaneo es "scan" (el que publica mujoco_ros2_lidar_bridge.py).
+#   * El mapa se pasa por RUTA ABSOLUTA con el argumento del launch file,
+#     así no hace falta meter los mapas dentro de un paquete ROS.
+# ============================================================================
+
+controller_node:
+  ros__parameters:
+    use_sim_time: false
+    controller_types: [serest]
+    serest:
+      rt_freq: 30.0
+      plugin: easynav_serest_controller/SerestController
+      allow_reverse: true
+      max_linear_speed: 0.6      # mismo límite que en DWB de Nav2
+      max_angular_speed: 0.8     # mismo límite que en DWB de Nav2
+      v_progress_min: 0.08
+      k_s_share_max: 0.5
+      k_theta: 2.5
+      k_y: 1.5
+      goal_pos_tol: 0.25         # tolerancia de posición (m), igual que Nav2
+      goal_yaw_tol_deg: 15.0     # tolerancia angular (~0.25 rad)
+      slow_radius: 0.80
+      slow_min_speed: 0.02
+      final_align_k: 2.5
+      final_align_wmax: 0.8
+      corner_guard_enable: true
+      corner_gain_ey: 1.8
+      corner_gain_eth: 0.7
+      corner_gain_kappa: 0.4
+      corner_min_alpha: 0.35
+      corner_boost_omega: 1.0
+      a_lat_soft: 0.9
+      apex_ey_des: 0.05
+
+localizer_node:
+  ros__parameters:
+    use_sim_time: false
+    localizer_types: [simple]
+    simple:
+      rt_freq: 50.0
+      freq: 5.0
+      reseed_freq: 1.0
+      plugin: easynav_simple_localizer/AMCLLocalizer
+      num_particles: 200       # un poco más que el ejemplo (100) para un mapa mayor
+      noise_translation: 0.05
+      noise_rotation: 0.1
+      noise_translation_to_rotation: 0.1
+      initial_pose:
+        x: 0.0
+        y: 0.0
+        yaw: 0.0
+        std_dev_xy: 0.1
+        std_dev_yaw: 0.01
+
+maps_manager_node:
+  ros__parameters:
+    use_sim_time: false
+    map_types: [simple]
+    simple:
+      freq: 10.0
+      plugin: easynav_simple_maps_manager/SimpleMapsManager
+      # RUTA ABSOLUTA al mapa. Esto lo sobreescribe el launch file
+      # con el argumento `map:=...` al arrancar. El valor por defecto de
+      # abajo solo sirve si lanzas el binario directamente sin launch.
+      map_path_file: /home/pablo/TFG/sim2sim/g1man/maps/default.yaml
+
+planner_node:
+  ros__parameters:
+    use_sim_time: false
+    planner_types: [simple]
+    simple:
+      freq: 0.5
+      plugin: easynav_simple_planner/SimplePlanner
+      robot_radius: 0.30       # mismo radio que en nav2_params.yaml
+
+sensors_node:
+  ros__parameters:
+    use_sim_time: false
+    forget_time: 0.5
+    sensors: [laser1]
+    perception_default_frame: odom
+    laser1:
+      topic: scan              # topic que publica mujoco_ros2_lidar_bridge.py
+      type: sensor_msgs/msg/LaserScan
+      group: points
+
+system_node:
+  ros__parameters:
+    use_sim_time: false
+    position_tolerance: 0.3
+    angle_tolerance: 0.15

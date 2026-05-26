@@ -1,0 +1,1215 @@
+<mujoco model="g1_sdf_scene_centered">
+  <include file="g1_29dof.xml"/>
+
+  <statistic center="0 0 1.0" extent="60"/>
+
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="-130" elevation="-20"/>
+  </visual>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0"
+             width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge"
+             rgb1="0.22 0.22 0.22" rgb2="0.12 0.12 0.12"
+             markrgb="0.7 0.7 0.7" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true"
+              texrepeat="10 10" reflectance="0.15"/>
+    <material name="wall_mat" rgba="0.55 0.50 0.45 1" reflectance="0.05"/>
+  </asset>
+
+  <worldbody>
+    <light pos="0 0 10" dir="0 0 -1" directional="true" diffuse="0.7 0.7 0.7"/>
+    <light pos="10 10 10" dir="0 0 -1" directional="true" diffuse="0.3 0.3 0.3"/>
+    <light pos="-10 -10 10" dir="0 0 -1" directional="true" diffuse="0.3 0.3 0.3"/>
+
+    <geom name="floor"
+          type="plane"
+          size="0 0 0.05"
+          material="groundplane"
+          friction="2.5 2.5 2.5"
+          group="3"/>
+
+    <geom name="Wall_100"
+          type="box" pos="-8.8735 34.72365 1.25" euler="0 0 -0.261799" size="0.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_101"
+          type="box" pos="-7.45611 34.37285 1.25" euler="0 0 -0.219449" size="0.735485 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_102"
+          type="box" pos="-6.84664 34.06195 1.25" euler="0 0 -1.77829" size="0.245762 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_103"
+          type="box" pos="-6.4245 33.78935 1.25" euler="0 0 -0.226799" size="0.544345 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_104"
+          type="box" pos="-5.9232 33.85085 1.25" euler="0 0 1.31347" size="0.247788 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_105"
+          type="box" pos="-4.74471 33.88605 1.25" euler="0 0 -0.115759" size="1.21716 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_106"
+          type="box" pos="-3.02095 33.71015 1.25" euler="0 0 -0.074489" size="0.665885 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_107"
+          type="box" pos="-1.84246 33.64855 1.25" euler="0 0 -0.029842" size="0.664505 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_108"
+          type="box" pos="-1.253217 33.47265 1.25" euler="0 0 -1.5708" size="0.233304 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_109"
+          type="box" pos="-1.03335 33.31435 1.25" euler="0 0 0" size="0.294868 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_111"
+          type="box" pos="-0.813483 28.51435 1.25" euler="0 0 -1.5708" size="4.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_112"
+          type="box" pos="-3.73848 23.71435 1.25" euler="0 0 3.14159" size="3 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_114"
+          type="box" pos="2.11152 23.71435 1.25" euler="0 0 0" size="3 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_116"
+          type="box" pos="4.51506 23.83585 1.25" euler="0 0 -1.5708" size="0.220112 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_118"
+          type="box" pos="4.13989 22.15745 1.25" euler="0 0 -1.57373" size="1.5745 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_119"
+          type="box" pos="-0.792538 20.67485 1.25" euler="0 0 3.13814" size="4.969275 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_120"
+          type="box" pos="-5.68239 22.19565 1.25" euler="0 0 1.56787" size="1.5789 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_122"
+          type="box" pos="-0.56453 33.31615 1.25" euler="0 0 0.00691" size="0.324314 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_123"
+          type="box" pos="-0.315578 33.51665 1.25" euler="0 0 1.5708" size="0.27385 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_124"
+          type="box" pos="0.40964 33.71555 1.25" euler="0 0 0" size="0.800215 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_125"
+          type="box" pos="1.84837 33.76235 1.25" euler="0 0 0.06548" size="0.79005 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_126"
+          type="box" pos="3.28711 33.90265 1.25" euler="0 0 0.128323" size="0.80623 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_127"
+          type="box" pos="4.16438 34.03135 1.25" euler="0 0 0.226799" size="0.231058 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_128"
+          type="box" pos="4.35154 33.89095 1.25" euler="0 0 -1.3734" size="0.25393 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_129"
+          type="box" pos="4.74924 33.77405 1.25" euler="0 0 0.159913" size="0.442294 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_130"
+          type="box" pos="8.34022 30.58075 1.25" euler="0 0 -0.789008" size="4.65719 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_131"
+          type="box" pos="12.35235 28.11265 1.25" euler="0 0 0.785398" size="1.18332 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_133"
+          type="box" pos="7.28709 28.72035 1.25" euler="0 0 -1.5708" size="3 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_135"
+          type="box" pos="0.72037 28.41085 1.25" euler="0 0 0" size="1.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_137"
+          type="box" pos="3.40078 27.27055 1.25" euler="0 0 -0.789774" size="1.68068 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_139"
+          type="box" pos="4.53119 25.49165 1.25" euler="0 0 -1.5708" size="0.71357 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_141"
+          type="box" pos="9.76545 25.52585 1.25" euler="0 0 -2.35619" size="2.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_142"
+          type="box" pos="7.3442 23.72195 1.25" euler="0 0 -3.14039" size="0.69317 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_144"
+          type="box" pos="7.28813 24.32155 1.25" euler="0 0 -1.56474" size="0.705925 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_146"
+          type="box" pos="5.17892 34.01185 1.25" euler="0 0 1.21287" size="0.266475 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_147"
+          type="box" pos="6.11228 34.40005 1.25" euler="0 0 0.236558" size="0.9661 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_148"
+          type="box" pos="7.77524 34.84085 1.25" euler="0 0 0.283421" size="0.904775 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_149"
+          type="box" pos="9.63155 35.46745 1.25" euler="0 0 0.356369" size="1.20569 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_150"
+          type="box" pos="10.76085 35.69175 1.25" euler="0 0 -1.18248" size="0.25885 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_151"
+          type="box" pos="11.10885 35.62985 1.25" euler="0 0 0.370891" size="0.373762 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_152"
+          type="box" pos="11.52655 35.79995 1.25" euler="0 0 0.418224" size="0.227355 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_153"
+          type="box" pos="11.61165 36.00885 1.25" euler="0 0 1.92379" size="0.231615 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_154"
+          type="box" pos="12.17625 36.44975 1.25" euler="0 0 0.443448" size="0.76003 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_155"
+          type="box" pos="13.33645 37.05305 1.25" euler="0 0 0.519146" size="0.69859 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_156"
+          type="box" pos="15.80485 35.44115 1.25" euler="0 0 -0.783911" size="2.79616 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_158"
+          type="box" pos="14.57405 37.75685 1.25" euler="0 0 0.515549" size="0.875115 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_159"
+          type="box" pos="15.67235 38.40655 1.25" euler="0 0 0.565484" size="0.551355 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_160"
+          type="box" pos="16.16735 38.51485 1.25" euler="0 0 -1.00748" size="0.248815 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_161"
+          type="box" pos="16.62365 38.62315 1.25" euler="0 0 0.612152" size="0.51919 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_162"
+          type="box" pos="16.87895 39.00985 1.25" euler="0 0 2.25972" size="0.245338 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_163"
+          type="box" pos="17.31205 39.50485 1.25" euler="0 0 0.591292" size="0.727145 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_164"
+          type="box" pos="18.34075 40.26285 1.25" euler="0 0 0.680521" size="0.701935 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_165"
+          type="box" pos="20.33635 39.13365 1.25" euler="0 0 -0.7905" size="2.218965 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_167"
+          type="box" pos="19.31555 41.08845 1.25" euler="0 0 0.724103" size="0.725775 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_168"
+          type="box" pos="20.20955 41.91145 1.25" euler="0 0 0.767085" size="0.639595 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_169"
+          type="box" pos="20.73585 42.18635 1.25" euler="0 0 -0.773053" size="0.242502 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_170"
+          type="box" pos="21.03125 42.23895 1.25" euler="0 0 0.768451" size="0.319031 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_172"
+          type="box" pos="22.56895 41.05795 1.25" euler="0 0 -0.78109" size="1.9933 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_173"
+          type="box" pos="23.29605 39.06035 1.25" euler="0 0 -2.34702" size="0.9817 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_175"
+          type="box" pos="18.26995 37.09895 1.25" euler="0 0 -0.785398" size="2.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_176"
+          type="box" pos="20.42265 36.19315 1.25" euler="0 0 0.799366" size="0.956795 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_178"
+          type="box" pos="19.18165 34.94625 1.25" euler="0 0 -2.36549" size="0.95259 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_181"
+          type="box" pos="17.73775 33.49625 1.25" euler="0 0 0.800322" size="0.353685 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_184"
+          type="box" pos="21.84325 37.62525 1.25" euler="0 0 -2.34127" size="0.353685 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_186"
+          type="box" pos="24.42535 39.23095 1.25" euler="0 0 -0.767218" size="0.76135 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_187"
+          type="box" pos="24.78995 38.62515 1.25" euler="0 0 -2.35619" size="0.257997 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_188"
+          type="box" pos="24.91345 38.23695 1.25" euler="0 0 -0.796892" size="0.436858 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_190"
+          type="box" pos="23.77245 36.56655 1.25" euler="0 0 -2.34991" size="2.058885 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_192"
+          type="box" pos="25.76045 38.56045 1.25" euler="0 0 0.775398" size="0.906845 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_193"
+          type="box" pos="27.83085 37.63705 1.25" euler="0 0 -0.79526" size="2.18372 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_195"
+          type="box" pos="26.81755 33.63765 1.25" euler="0 0 -2.3554" size="3.59868 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_196"
+          type="box" pos="22.81885 32.63755 1.25" euler="0 0 2.36138" size="2.19814 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_197"
+          type="box" pos="21.37205 34.20105 1.25" euler="0 0 0.844154" size="0.168666 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_199"
+          type="box" pos="20.65575 33.47695 1.25" euler="0 0 -2.35619" size="1 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_201"
+          type="box" pos="25.46075 35.41145 1.25" euler="0 0 -2.34776" size="1.371255 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_202"
+          type="box" pos="24.62925 34.40985 1.25" euler="0 0 -0.785398" size="0.184385 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_203"
+          type="box" pos="25.61925 35.23745 1.25" euler="0 0 0.781143" size="1.36028 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_204"
+          type="box" pos="26.45465 36.23135 1.25" euler="0 0 2.28654" size="0.192875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_206"
+          type="box" pos="13.54625 33.59395 1.25" euler="0 0 -0.781972" size="3.117795 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_207"
+          type="box" pos="16.30555 32.05245 1.25" euler="0 0 0.787392" size="0.92571 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_209"
+          type="box" pos="14.94155 30.70635 1.25" euler="0 0 0.785398" size="1.125 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_211"
+          type="box" pos="24.12535 30.96285 1.25" euler="0 0 -2.41148" size="0.346771 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_212"
+          type="box" pos="24.11725 30.57695 1.25" euler="0 0 -0.811034" size="0.357182 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_213"
+          type="box" pos="23.55465 29.60015 1.25" euler="0 0 -2.34616" size="1.156395 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_214"
+          type="box" pos="22.22485 28.26015 1.25" euler="0 0 -2.36068" size="0.881495 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_216"
+          type="box" pos="15.07595 21.11625 1.25" euler="0 0 -2.35619" size="9.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_219"
+          type="box" pos="20.89475 30.35705 1.25" euler="0 0 -0.787394" size="2.484825 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_222"
+          type="box" pos="19.13975 32.04405 1.25" euler="0 0 -2.33579" size="0.31074 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_224"
+          type="box" pos="17.14075 30.03395 1.25" euler="0 0 -2.35143" size="1.83172 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_226"
+          type="box" pos="18.82655 28.31265 1.25" euler="0 0 -0.792247" size="2.51771 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_228"
+          type="box" pos="15.04685 27.96965 1.25" euler="0 0 -2.34127" size="0.355267 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_231"
+          type="box" pos="16.75625 26.26015 1.25" euler="0 0 -0.787119" size="2.50511 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_233"
+          type="box" pos="13.00015 25.91115 1.25" euler="0 0 -2.35381" size="1.827525 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_235"
+          type="box" pos="14.71555 24.21355 1.25" euler="0 0 -0.788823" size="2.517665 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_237"
+          type="box" pos="10.95355 23.85855 1.25" euler="0 0 -2.32679" size="0.359542 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_239"
+          type="box" pos="12.65115 22.14915 1.25" euler="0 0 -0.792247" size="2.51771 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_241"
+          type="box" pos="8.90099 21.79425 1.25" euler="0 0 -2.35619" size="1.848435 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_243"
+          type="box" pos="10.58675 20.07885 1.25" euler="0 0 -0.783677" size="2.50511 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_245"
+          type="box" pos="6.82478 19.74755 1.25" euler="0 0 -2.34286" size="0.388724 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_247"
+          type="box" pos="8.54017 18.03815 1.25" euler="0 0 -0.788823" size="2.517665 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_249"
+          type="box" pos="5.39879 18.32575 1.25" euler="0 0 -2.35085" size="0.969405 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_250"
+          type="box" pos="6.23076 16.20865 1.25" euler="0 0 -0.792295" size="2.155595 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_251"
+          type="box" pos="8.10439 14.63265 1.25" euler="0 0 -0.225601" size="0.49833 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_253"
+          type="box" pos="4.84444 18.43305 1.25" euler="0 0 -3.11197" size="0.765635 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_255"
+          type="box" pos="1.50947 18.43305 1.25" euler="0 0 3.14159" size="1.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_256"
+          type="box" pos="-0.040533 18.00805 1.25" euler="0 0 -1.5708" size="0.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_259"
+          type="box" pos="-0.041782 15.92915 1.25" euler="0 0 -1.57155" size="1.728955 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_260"
+          type="box" pos="3.63893 14.28115 1.25" euler="0 0 0.001597" size="3.756965 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_261"
+          type="box" pos="7.52675 14.49295 1.25" euler="0 0 0.785398" size="0.366131 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_263"
+          type="box" pos="0.55343 12.24465 1.25" euler="0 0 -1.56406" size="2.095415 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_264"
+          type="box" pos="1.70984 10.20395 1.25" euler="0 0 -0.017855" size="1.217985 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_266"
+          type="box" pos="4.23353 12.23785 1.25" euler="0 0 -1.56086" size="2.129425 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_267"
+          type="box" pos="3.92742 10.19035 1.25" euler="0 0 3.12076" size="0.401585 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_270"
+          type="box" pos="5.92894 10.18355 1.25" euler="0 0 0" size="1.75 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_271"
+          type="box" pos="7.60394 10.00845 1.25" euler="0 0 -1.5708" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_272"
+          type="box" pos="7.77894 9.8335 1.25" euler="0 0 0" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_273"
+          type="box" pos="7.95394 8.1585 1.25" euler="0 0 -1.5708" size="1.75 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_274"
+          type="box" pos="7.77894 6.4835 1.25" euler="0 0 3.14159" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_275"
+          type="box" pos="7.60653 6.24746 1.25" euler="0 0 -1.5598" size="0.31105 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_276"
+          type="box" pos="4.05913 6.01143 1.25" euler="0 0 3.14159" size="3.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_277"
+          type="box" pos="0.50913 6.56143 1.25" euler="0 0 1.5708" size="0.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_279"
+          type="box" pos="0.56444 9.09061 1.25" euler="0 0 -1.57309" size="1.208705 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_281"
+          type="box" pos="-25.97235 39.25715 1.25" euler="0 0 -2.35619" size="0.75 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_282"
+          type="box" pos="-26.32595 38.65615 1.25" euler="0 0 -0.785398" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_283"
+          type="box" pos="-26.50275 38.23185 1.25" euler="0 0 -2.35619" size="0.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_284"
+          type="box" pos="-27.36895 38.49705 1.25" euler="0 0 2.35619" size="0.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_285"
+          type="box" pos="-29.38415 37.61315 1.25" euler="0 0 -2.35619" size="2.125 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_286"
+          type="box" pos="-28.32355 33.65335 1.25" euler="0 0 -0.785398" size="3.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_287"
+          type="box" pos="-24.32295 32.63365 1.25" euler="0 0 0.785443" size="2.18275 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_288"
+          type="box" pos="-22.89685 34.20115 1.25" euler="0 0 2.28545" size="0.177067 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_290"
+          type="box" pos="-25.35365 36.48185 1.25" euler="0 0 -0.785398" size="2.125 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_292"
+          type="box" pos="-26.97735 35.41895 1.25" euler="0 0 -0.782643" size="1.402755 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_293"
+          type="box" pos="-26.16005 34.35855 1.25" euler="0 0 -2.35619" size="0.25057 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_294"
+          type="box" pos="-27.22565 35.16555 1.25" euler="0 0 2.36172" size="1.399115 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_295"
+          type="box" pos="-28.04815 36.21565 1.25" euler="0 0 0.785398" size="0.243255 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_297"
+          type="box" pos="-25.81325 30.71815 1.25" euler="0 0 -1.5708" size="0.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_299"
+          type="box" pos="-17.73455 22.21445 1.25" euler="0 0 -0.785398" size="11.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_300"
+          type="box" pos="-7.85589 14.13575 1.25" euler="0 0 0" size="1.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_304"
+          type="box" pos="-22.17595 33.47005 1.25" euler="0 0 -0.785398" size="1 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_306"
+          type="box" pos="-20.72455 32.07315 1.25" euler="0 0 -0.790688" size="0.358592 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_309"
+          type="box" pos="-22.44085 30.36175 1.25" euler="0 0 -2.34807" size="2.495825 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_311"
+          type="box" pos="-18.66655 30.01465 1.25" euler="0 0 -0.787539" size="1.836605 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_313"
+          type="box" pos="-20.42165 28.30225 1.25" euler="0 0 -2.3609" size="2.47789 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_315"
+          type="box" pos="-16.61265 27.97685 1.25" euler="0 0 -0.785398" size="0.361684 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_318"
+          type="box" pos="-18.33045 26.24305 1.25" euler="0 0 -2.34531" size="2.500645 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_320"
+          type="box" pos="-14.54285 25.86425 1.25" euler="0 0 -0.785398" size="1.84037 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_322"
+          type="box" pos="-16.30325 24.18925 1.25" euler="0 0 -2.35306" size="2.48165 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_324"
+          type="box" pos="-12.48495 23.85975 1.25" euler="0 0 -0.785398" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_326"
+          type="box" pos="-14.22275 22.14075 1.25" euler="0 0 -2.35619" size="2.50427 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_328"
+          type="box" pos="-10.43203 21.76415 1.25" euler="0 0 -0.785398" size="1.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_330"
+          type="box" pos="-12.16895 20.06555 1.25" euler="0 0 -2.35619" size="2.496725 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_332"
+          type="box" pos="-8.37726 19.72005 1.25" euler="0 0 -0.785398" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_335"
+          type="box" pos="-10.1311 18.02775 1.25" euler="0 0 -2.35932" size="2.489195 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_337"
+          type="box" pos="-6.973 18.28375 1.25" euler="0 0 -0.802491" size="0.957815 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_339"
+          type="box" pos="-6.41334 18.42345 1.25" euler="0 0 0" size="0.797 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_341"
+          type="box" pos="-3.3643 18.41955 1.25" euler="0 0 -0.012548" size="1.343275 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_346"
+          type="box" pos="-8.07425 15.93425 1.25" euler="0 0 -2.35619" size="2.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_351"
+          type="box" pos="-4.06465 14.14605 1.25" euler="0 0 0.005194" size="2.06641 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_352"
+          type="box" pos="-2.07681 16.28005 1.25" euler="0 0 1.5724" size="2.19859 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_354"
+          type="box" pos="-2.07342 12.98145 1.25" euler="0 0 -1.5708" size="1.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_356"
+          type="box" pos="-5.69375 12.11955 1.25" euler="0 0 -1.56689" size="2.112075 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_357"
+          type="box" pos="-4.37292 10.08255 1.25" euler="0 0 0" size="1.387965 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_359"
+          type="box" pos="-2.07342 9.53355 1.25" euler="0 0 -1.5708" size="1.61066 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_361"
+          type="box" pos="-7.61079 10.08255 1.25" euler="0 0 3.14159" size="2 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_363"
+          type="box" pos="-9.53579 8.15757 1.25" euler="0 0 -1.5708" size="2 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_364"
+          type="box" pos="-5.79665 6.22407 1.25" euler="0 0 -0.002272" size="3.814155 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_365"
+          type="box" pos="-2.0575 6.7089 1.25" euler="0 0 1.5708" size="0.56832 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_367"
+          type="box" pos="-3.81879 4.46086 1.25" euler="0 0 -1.5708" size="1.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_368"
+          type="box" pos="-3.64379 2.66086 1.25" euler="0 0 0" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_369"
+          type="box" pos="-3.46879 0.235861 1.25" euler="0 0 -1.5708" size="2.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_370"
+          type="box" pos="-3.64379 -2.18914 1.25" euler="0 0 3.14159" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_371"
+          type="box" pos="-3.81879 -3.92038 1.25" euler="0 0 -1.5708" size="1.80624 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_375"
+          type="box" pos="7.78413 6.01143 1.25" euler="0 0 0" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_376"
+          type="box" pos="7.95913 4.08643 1.25" euler="0 0 -1.5708" size="2 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_377"
+          type="box" pos="5.90913 2.16143 1.25" euler="0 0 3.14159" size="2.125 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_378"
+          type="box" pos="3.86415 4.107 1.25" euler="0 0 1.56821" size="2.020575 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_380"
+          type="box" pos="8.75913 2.16143 1.25" euler="0 0 0" size="0.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_381"
+          type="box" pos="9.55915 0.236428 1.25" euler="0 0 -1.5708" size="2 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_383"
+          type="box" pos="6.67391 -1.6816 1.25" euler="0 0 3.13917" size="2.960225 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_384"
+          type="box" pos="3.79562 -2.31808 1.25" euler="0 0 -1.56004" size="0.7185 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_385"
+          type="box" pos="6.05119 -2.95462 1.25" euler="0 0 0.003077" size="2.323665 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_386"
+          type="box" pos="8.29292 -4.27614 1.25" euler="0 0 -1.57601" size="1.40351 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_387"
+          type="box" pos="4.12081 -5.63225 1.25" euler="0 0 -3.13495" size="4.240345 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_389"
+          type="box" pos="-5.91707 -5.72912 1.25" euler="0 0 0" size="3.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_390"
+          type="box" pos="-2.11707 -6.27912 1.25" euler="0 0 -1.5708" size="0.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_392"
+          type="box" pos="0.5368 -6.25144 1.25" euler="0 0 -1.5708" size="0.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_394"
+          type="box" pos="-1.95402 -6.46252 1.25" euler="0 0 0" size="0.213378 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_396"
+          type="box" pos="0.189508 -6.467 1.25" euler="0 0 3.14159" size="0.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_398"
+          type="box" pos="-0.044395 -6.08493 1.25" euler="0 0 -1.5708" size="0.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_400"
+          type="box" pos="-9.71707 -7.77912 1.25" euler="0 0 -1.5708" size="2.125 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_401"
+          type="box" pos="-7.79207 -9.82912 1.25" euler="0 0 0" size="2 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_402"
+          type="box" pos="-5.86707 -9.65412 1.25" euler="0 0 1.5708" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_403"
+          type="box" pos="-5.56707 -9.47912 1.25" euler="0 0 0" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_404"
+          type="box" pos="-5.26707 -9.77912 1.25" euler="0 0 -1.5708" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_405"
+          type="box" pos="-5.44207 -10.07912 1.25" euler="0 0 3.14159" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_408"
+          type="box" pos="-4.13799 -9.81515 1.25" euler="0 0 -3.12808" size="1.170835 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_410"
+          type="box" pos="7.64856 -5.95433 1.25" euler="0 0 -1.5708" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_411"
+          type="box" pos="7.82356 -6.25433 1.25" euler="0 0 0" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_412"
+          type="box" pos="7.99856 -7.80433 1.25" euler="0 0 -1.5708" size="1.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_413"
+          type="box" pos="7.82356 -9.35433 1.25" euler="0 0 3.14159" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_414"
+          type="box" pos="7.64856 -9.52933 1.25" euler="0 0 -1.5708" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_415"
+          type="box" pos="6.02717 -9.70792 1.25" euler="0 0 -3.13938" size="1.696395 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_416"
+          type="box" pos="4.39097 -9.54862 1.25" euler="0 0 1.66146" size="0.238551 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_417"
+          type="box" pos="4.07261 -9.38575 1.25" euler="0 0 3.14159" size="0.378548 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_418"
+          type="box" pos="3.76166 -9.7115 1.25" euler="0 0 -1.59352" size="0.400843 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_419"
+          type="box" pos="3.93935 -10.03726 1.25" euler="0 0 0" size="0.26009 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_421"
+          type="box" pos="-2.07978 -9.15888 1.25" euler="0 0 -1.5708" size="1.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_423"
+          type="box" pos="0.55477 -10.66985 1.25" euler="0 0 -1.5708" size="3.125 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_424"
+          type="box" pos="2.22978 -13.71985 1.25" euler="0 0 0" size="1.75 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_425"
+          type="box" pos="3.90477 -13.41985 1.25" euler="0 0 1.5708" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_426"
+          type="box" pos="3.95478 -13.11985 1.25" euler="0 0 0" size="0.125 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_427"
+          type="box" pos="4.09329 -13.11995 1.25" euler="0 0 -0.000793" size="0.163514 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_428"
+          type="box" pos="4.15312 -11.57865 1.25" euler="0 0 1.5894" size="1.616635 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_430"
+          type="box" pos="1.7468 -9.78245 1.25" euler="0 0 0" size="1.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_432"
+          type="box" pos="-5.61707 -11.62915 1.25" euler="0 0 -1.5708" size="1.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_433"
+          type="box" pos="-5.44207 -13.17915 1.25" euler="0 0 0" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_434"
+          type="box" pos="-5.26707 -13.47915 1.25" euler="0 0 -1.5708" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_435"
+          type="box" pos="-3.66156 -13.77105 1.25" euler="0 0 0.005054" size="1.68058 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_436"
+          type="box" pos="-2.05606 -12.61815 1.25" euler="0 0 1.5708" size="1.2197 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_438"
+          type="box" pos="-1.9379 -12.98005 1.25" euler="0 0 0" size="0.222887 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_440"
+          type="box" pos="0.118517 -12.99485 1.25" euler="0 0 3.14159" size="0.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_443"
+          type="box" pos="-0.010369 -14.63435 1.25" euler="0 0 1.57538" size="1.685385 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_445"
+          type="box" pos="1.08055 -15.85065 1.25" euler="0 0 -1.5708" size="2.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_446"
+          type="box" pos="2.07754 -18.02185 1.25" euler="0 0 0.003776" size="1.072005 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_448"
+          type="box" pos="-0.012458 -17.63075 1.25" euler="0 0 -1.5708" size="0.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_449"
+          type="box" pos="0.53404 -18.04075 1.25" euler="0 0 0.027535" size="0.62171 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_451"
+          type="box" pos="5.95478 -13.71985 1.25" euler="0 0 0" size="2.125 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_452"
+          type="box" pos="6.11326 -15.61135 1.25" euler="0 0 -2.35619" size="2.75 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_453"
+          type="box" pos="4.21914 -17.76775 1.25" euler="0 0 -1.58066" size="0.339927 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_454"
+          type="box" pos="4.85871 -18.02155 1.25" euler="0 0 0.01739" size="0.717285 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_455"
+          type="box" pos="5.0765 -17.56925 1.25" euler="0 0 2.33684" size="0.687155 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_457"
+          type="box" pos="-2.06318 -15.90565 1.25" euler="0 0 -1.57412" size="2.21781 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_458"
+          type="box" pos="-3.35274 -18.03995 1.25" euler="0 0 3.13497" size="1.35746 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_460"
+          type="box" pos="-7.44207 -13.77915 1.25" euler="0 0 3.14159" size="2.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_461"
+          type="box" pos="-7.90233 -15.49385 1.25" euler="0 0 -0.785398" size="2.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_462"
+          type="box" pos="-6.84167 -17.86265 1.25" euler="0 0 -2.35619" size="1 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_464"
+          type="box" pos="-6.39865 -18.04115 1.25" euler="0 0 3.14159" size="0.75 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_466"
+          type="box" pos="-5.95563 -17.62485 1.25" euler="0 0 -1.06239" size="0.55154 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_468"
+          type="box" pos="-20.52415 -24.68625 1.25" euler="0 0 -2.35619" size="15.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_471"
+          type="box" pos="-29.57395 -37.43525 1.25" euler="0 0 -0.781213" size="2.690845 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_472"
+          type="box" pos="-27.27955 -38.84995 1.25" euler="0 0 0.774288" size="0.68613 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_474"
+          type="box" pos="-24.68605 -40.57925 1.25" euler="0 0 -0.785398" size="3.125 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_475"
+          type="box" pos="-22.05205 -42.25865 1.25" euler="0 0 0.785398" size="0.75 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_476"
+          type="box" pos="-20.96625 -41.23405 1.25" euler="0 0 0.732505" size="0.893435 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_477"
+          type="box" pos="-19.39255 -39.95015 1.25" euler="0 0 0.651869" size="1.28908 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_478"
+          type="box" pos="-17.70995 -38.72475 1.25" euler="0 0 0.598144" size="0.94324 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_479"
+          type="box" pos="-16.30675 -37.84215 1.25" euler="0 0 0.521138" size="0.865715 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_48"
+          type="box" pos="-24.84105 39.08045 1.25" euler="0 0 -0.785398" size="1 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_480"
+          type="box" pos="-14.97965 -37.11825 1.25" euler="0 0 0.475458" size="0.79631 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_482"
+          type="box" pos="-13.80495 -36.53415 1.25" euler="0 0 0.444419" size="0.66575 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_483"
+          type="box" pos="-12.42715 -35.91825 1.25" euler="0 0 0.404892" size="0.99378 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_484"
+          type="box" pos="-10.85245 -35.28965 1.25" euler="0 0 0.350167" size="0.852375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_485"
+          type="box" pos="-9.43014 -34.82605 1.25" euler="0 0 0.277088" size="0.79455 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_486"
+          type="box" pos="-7.96339 -34.44515 1.25" euler="0 0 0.233374" size="0.87123 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_487"
+          type="box" pos="-6.36331 -34.10855 1.25" euler="0 0 0.18256" size="0.91439 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_488"
+          type="box" pos="-4.70607 -33.83555 1.25" euler="0 0 0.144034" size="0.915495 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_489"
+          type="box" pos="-2.8901 -33.65145 1.25" euler="0 0 0.064427" size="1.061225 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_490"
+          type="box" pos="-0.782046 -33.58155 1.25" euler="0 0 0.00565" size="1.19889 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_491"
+          type="box" pos="1.4657 -33.65775 1.25" euler="0 0 -0.073315" size="1.2019 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_492"
+          type="box" pos="3.49755 -33.86735 1.25" euler="0 0 -0.138959" size="0.991825 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_493"
+          type="box" pos="5.18654 -34.15305 1.25" euler="0 0 -0.200521" size="0.871965 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_495"
+          type="box" pos="6.74027 -34.51885 1.25" euler="0 0 -0.261799" size="0.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_496"
+          type="box" pos="8.33386 -34.96375 1.25" euler="0 0 -0.282111" size="0.929635 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_497"
+          type="box" pos="9.83485 -35.46205 1.25" euler="0 0 -0.365518" size="0.80329 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_498"
+          type="box" pos="11.43875 -36.12545 1.25" euler="0 0 -0.411456" size="1.082815 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_499"
+          type="box" pos="13.16025 -36.95675 1.25" euler="0 0 -0.492685" size="0.98043 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_50"
+          type="box" pos="-23.38695 37.60675 1.25" euler="0 0 -0.785398" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_500"
+          type="box" pos="14.52055 -37.72095 1.25" euler="0 0 -0.538222" size="0.73026 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_501"
+          type="box" pos="15.87255 -38.59425 1.25" euler="0 0 -0.597758" size="1.02993 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_502"
+          type="box" pos="17.56035 -39.78665 1.25" euler="0 0 -0.629907" size="1.186905 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_503"
+          type="box" pos="18.97955 -40.92025 1.25" euler="0 0 -0.743406" size="0.78222 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_505"
+          type="box" pos="20.15425 -42.05295 1.25" euler="0 0 -0.785398" size="1 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_506"
+          type="box" pos="23.05335 -40.46195 1.25" euler="0 0 0.785398" size="3.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_508"
+          type="box" pos="25.68735 -38.60585 1.25" euler="0 0 -0.785398" size="0.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_509"
+          type="box" pos="27.70265 -37.36845 1.25" euler="0 0 0.785398" size="2.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_512"
+          type="box" pos="26.81875 -33.23185 1.25" euler="0 0 2.35619" size="3.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_513"
+          type="box" pos="22.77055 -32.25955 1.25" euler="0 0 -2.35619" size="2.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_514"
+          type="box" pos="21.35635 -33.92125 1.25" euler="0 0 -0.785398" size="0.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_516"
+          type="box" pos="24.34155 -36.71875 1.25" euler="0 0 -0.785398" size="2.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_518"
+          type="box" pos="18.91185 -24.62695 1.25" euler="0 0 -0.785398" size="15.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_52"
+          type="box" pos="-21.34125 35.55985 1.25" euler="0 0 -0.785398" size="1.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_520"
+          type="box" pos="29.57395 -35.63805 1.25" euler="0 0 -2.74028" size="0.341182 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_522"
+          type="box" pos="24.47595 -30.56105 1.25" euler="0 0 0.764283" size="0.306947 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_524"
+          type="box" pos="5.71303 -18.22245 1.25" euler="0 0 -0.785398" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_526"
+          type="box" pos="8.4901 -17.64245 1.25" euler="0 0 -2.35409" size="2.45316 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_528"
+          type="box" pos="10.57175 -19.68165 1.25" euler="0 0 0.783302" size="2.46317 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_530"
+          type="box" pos="6.83327 -19.30635 1.25" euler="0 0 -0.785398" size="0.365385 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_532"
+          type="box" pos="8.87953 -21.36675 1.25" euler="0 0 -0.785398" size="1.857365 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_535"
+          type="box" pos="12.66175 -21.70535 1.25" euler="0 0 0.785398" size="2.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_537"
+          type="box" pos="14.67845 -23.76705 1.25" euler="0 0 0.7896" size="2.45818 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_54"
+          type="box" pos="-19.28055 33.51645 1.25" euler="0 0 -0.785398" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_540"
+          type="box" pos="10.91165 -23.41305 1.25" euler="0 0 -0.818719" size="0.375565 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_542"
+          type="box" pos="12.97205 -25.48755 1.25" euler="0 0 -0.790985" size="1.867405 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_545"
+          type="box" pos="16.76005 -25.82745 1.25" euler="0 0 0.779135" size="2.473225 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_547"
+          type="box" pos="18.79215 -27.88785 1.25" euler="0 0 0.787495" size="2.46317 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_549"
+          type="box" pos="15.04665 -27.53385 1.25" euler="0 0 -0.785398" size="0.385412 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_551"
+          type="box" pos="17.10535 -29.56425 1.25" euler="0 0 -0.785398" size="1.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_553"
+          type="box" pos="20.84545 -29.97665 1.25" euler="0 0 -2.34779" size="2.458245 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_555"
+          type="box" pos="19.16005 -31.64735 1.25" euler="0 0 -0.785398" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_557"
+          type="box" pos="20.60005 -33.11195 1.25" euler="0 0 -0.82559" size="1.007765 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_559"
+          type="box" pos="23.20975 -38.50695 1.25" euler="0 0 2.35619" size="1.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_56"
+          type="box" pos="-13.94345 28.21285 1.25" euler="0 0 -0.785398" size="6.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_561"
+          type="box" pos="19.87835 -35.27325 1.25" euler="0 0 2.35619" size="2 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_563"
+          type="box" pos="17.93815 -36.93935 1.25" euler="0 0 -2.35619" size="2.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_565"
+          type="box" pos="15.60485 -35.13635 1.25" euler="0 0 -2.35619" size="3 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_567"
+          type="box" pos="17.78715 -33.09245 1.25" euler="0 0 -0.83989" size="0.392141 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_569"
+          type="box" pos="15.58185 -30.92795 1.25" euler="0 0 -0.785398" size="2 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_57"
+          type="box" pos="-8.85033 23.66975 1.25" euler="0 0 0" size="0.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_571"
+          type="box" pos="13.24825 -33.38905 1.25" euler="0 0 -2.35619" size="3.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_573"
+          type="box" pos="10.51375 -25.83715 1.25" euler="0 0 2.35619" size="3.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_574"
+          type="box" pos="7.32853 -23.32695 1.25" euler="0 0 3.14159" size="0.75 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_576"
+          type="box" pos="7.97174 -30.44025 1.25" euler="0 0 -2.3579" size="5.1098 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_578"
+          type="box" pos="7.26554 -23.92635 1.25" euler="0 0 -1.5912" size="0.68193 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_580"
+          type="box" pos="7.29767 -28.27015 1.25" euler="0 0 -1.56794" size="2.980965 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_582"
+          type="box" pos="-0.805377 -23.24005 1.25" euler="0 0 3.14159" size="5.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_584"
+          type="box" pos="-5.68816 -21.75635 1.25" euler="0 0 1.5708" size="1.546095 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_585"
+          type="box" pos="-0.788729 -20.28525 1.25" euler="0 0 0" size="4.974435 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_586"
+          type="box" pos="4.1107 -21.76265 1.25" euler="0 0 -1.5708" size="1.55242 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_589"
+          type="box" pos="-6.3511 -23.37265 1.25" euler="0 0 1.61425" size="0.220215 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_59"
+          type="box" pos="-24.13395 41.09565 1.25" euler="0 0 0.785398" size="2 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_591"
+          type="box" pos="-6.35741 -25.09635 1.25" euler="0 0 -1.5708" size="0.820045 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_592"
+          type="box" pos="-5.63765 -26.54215 1.25" euler="0 0 -0.772066" size="1.079595 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_593"
+          type="box" pos="-2.85331 -27.24935 1.25" euler="0 0 -0.003058" size="2.13958 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_594"
+          type="box" pos="-0.788729 -25.26675 1.25" euler="0 0 1.5708" size="2.063855 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_596"
+          type="box" pos="-0.788729 -30.43065 1.25" euler="0 0 -1.5708" size="3.25 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_598"
+          type="box" pos="-10.06788 -17.60695 1.25" euler="0 0 -0.790324" size="2.472155 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_60"
+          type="box" pos="-22.58295 42.25865 1.25" euler="0 0 -0.806995" size="0.349423 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_600"
+          type="box" pos="-8.40626 -19.31035 1.25" euler="0 0 -2.33801" size="0.399788 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_602"
+          type="box" pos="-10.49225 -21.39705 1.25" euler="0 0 -2.35619" size="1.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_604"
+          type="box" pos="-12.13105 -19.68865 1.25" euler="0 0 -0.787558" size="2.45211 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_606"
+          type="box" pos="-14.20035 -21.75795 1.25" euler="0 0 -0.783257" size="2.472645 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_608"
+          type="box" pos="-12.50855 -23.41335 1.25" euler="0 0 -2.3205" size="0.362694 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_61"
+          type="box" pos="-22.27375 42.18475 1.25" euler="0 0 0.805804" size="0.247299 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_610"
+          type="box" pos="-16.23215 -23.81395 1.25" euler="0 0 -0.785398" size="2.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_612"
+          type="box" pos="-14.58735 -25.47765 1.25" euler="0 0 -2.35619" size="1.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_614"
+          type="box" pos="-16.63425 -27.55355 1.25" euler="0 0 -2.35619" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_616"
+          type="box" pos="-18.31715 -25.85305 1.25" euler="0 0 2.34754" size="2.44706 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_618"
+          type="box" pos="-18.68235 -29.58725 1.25" euler="0 0 -2.35619" size="1.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_62"
+          type="box" pos="-22.02025 42.17485 1.25" euler="0 0 -0.785398" size="0.264841 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_620"
+          type="box" pos="-20.35745 -27.90055 1.25" euler="0 0 -0.783257" size="2.472645 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_622"
+          type="box" pos="-22.40495 -29.94805 1.25" euler="0 0 -0.791934" size="2.431615 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_624"
+          type="box" pos="-20.71325 -31.65435 1.25" euler="0 0 0.734594" size="0.378305 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_626"
+          type="box" pos="-22.19445 -33.09195 1.25" euler="0 0 -2.35061" size="0.994025 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_627"
+          type="box" pos="-24.53965 -32.06095 1.25" euler="0 0 2.36049" size="2.467525 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_629"
+          type="box" pos="-26.02705 -36.81575 1.25" euler="0 0 -2.35619" size="3 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_63"
+          type="box" pos="-21.68715 41.84665 1.25" euler="0 0 -0.772741" size="0.352753 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_631"
+          type="box" pos="-25.04605 -38.73895 1.25" euler="0 0 0.785398" size="1.125 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_633"
+          type="box" pos="-23.39815 -37.17825 1.25" euler="0 0 0.785398" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_635"
+          type="box" pos="-21.32095 -35.11555 1.25" euler="0 0 0.785398" size="1.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_637"
+          type="box" pos="-19.30305 -33.06865 1.25" euler="0 0 0.785398" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_639"
+          type="box" pos="-17.15205 -30.93215 1.25" euler="0 0 0.785398" size="2 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_64"
+          type="box" pos="-21.28935 41.48375 1.25" euler="0 0 -0.704494" size="0.336006 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_646"
+          type="box" pos="-21.79745 -38.85255 1.25" euler="0 0 -0.792993" size="2.407245 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_648"
+          type="box" pos="-19.56795 -36.94885 1.25" euler="0 0 -0.790028" size="2.625665 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_65"
+          type="box" pos="-20.89655 41.14065 1.25" euler="0 0 -0.731397" size="0.335532 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_650"
+          type="box" pos="-17.27175 -35.12015 1.25" euler="0 0 -0.785398" size="3.00351 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_652"
+          type="box" pos="-14.83325 -33.43385 1.25" euler="0 0 -0.785398" size="3.5 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_654"
+          type="box" pos="-9.57605 -30.49145 1.25" euler="0 0 -0.785398" size="5.125 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_656"
+          type="box" pos="-12.00115 -25.80825 1.25" euler="0 0 0.785398" size="3.75 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_657"
+          type="box" pos="-8.85258 -23.20965 1.25" euler="0 0 0" size="0.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_659"
+          type="box" pos="-8.40421 -26.16555 1.25" euler="0 0 -1.5708" size="1.875 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_66"
+          type="box" pos="-20.53365 40.82245 1.25" euler="0 0 -0.706199" size="0.297177 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_660"
+          type="box" pos="-9.32345 -28.88475 1.25" euler="0 0 -2.35619" size="1.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_662"
+          type="box" pos="4.15398 17.86255 1.25" euler="0 0 -1.5708" size="0.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_663"
+          type="box" pos="4.46186 17.50125 1.25" euler="0 0 0.549827" size="0.436103 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_665"
+          type="box" pos="-5.69137 17.87345 1.25" euler="0 0 -1.5708" size="0.625 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_666"
+          type="box" pos="-6.02544 17.48615 1.25" euler="0 0 2.68821" size="0.446615 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_68"
+          type="box" pos="-21.87385 39.14465 1.25" euler="0 0 -2.34817" size="2.22666 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_70"
+          type="box" pos="-20.19425 40.55315 1.25" euler="0 0 -0.633532" size="0.286414 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_71"
+          type="box" pos="-19.79905 40.23625 1.25" euler="0 0 -0.706199" size="0.370498 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_72"
+          type="box" pos="-19.35595 39.87255 1.25" euler="0 0 -0.667306" size="0.352803 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_73"
+          type="box" pos="-18.74765 39.42955 1.25" euler="0 0 -0.607305" size="0.55009 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_74"
+          type="box" pos="-18.46325 39.02615 1.25" euler="0 0 -2.24554" size="0.244363 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_75"
+          type="box" pos="-18.41705 38.78815 1.25" euler="0 0 -0.607802" size="0.260268 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_76"
+          type="box" pos="-19.79905 37.12175 1.25" euler="0 0 -2.34765" size="2.26333 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_78"
+          type="box" pos="-18.03345 38.53025 1.25" euler="0 0 -0.58138" size="0.351936 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_79"
+          type="box" pos="-17.70945 38.51695 1.25" euler="0 0 0.982794" size="0.241892 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_80"
+          type="box" pos="-17.25325 38.42445 1.25" euler="0 0 -0.566729" size="0.50608 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_81"
+          type="box" pos="-16.49275 37.94835 1.25" euler="0 0 -0.552584" size="0.54112 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_82"
+          type="box" pos="-15.75215 37.53835 1.25" euler="0 0 -0.448145" size="0.456524 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_83"
+          type="box" pos="-17.33915 35.44875 1.25" euler="0 0 -2.35791" size="2.80096 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_85"
+          type="box" pos="-15.14855 37.22305 1.25" euler="0 0 -0.523599" size="0.375 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_86"
+          type="box" pos="-14.45985 36.84665 1.25" euler="0 0 -0.48571" size="0.55994 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_87"
+          type="box" pos="-13.55835 36.41915 1.25" euler="0 0 -0.402321" size="0.588685 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_88"
+          type="box" pos="-13.17615 36.06715 1.25" euler="0 0 -2.11122" size="0.250922 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_89"
+          type="box" pos="-13.08565 35.84585 1.25" euler="0 0 -0.370891" size="0.269229 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_90"
+          type="box" pos="-15.05675 33.62335 1.25" euler="0 0 -2.35619" size="3.118605 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_92"
+          type="box" pos="-12.65325 35.64475 1.25" euler="0 0 -0.479519" size="0.35838 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_93"
+          type="box" pos="-12.33135 35.68495 1.25" euler="0 0 1.18019" size="0.259892 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_94"
+          type="box" pos="-11.63745 35.61455 1.25" euler="0 0 -0.369334" size="0.743605 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_95"
+          type="box" pos="-10.3301 35.15195 1.25" euler="0 0 -0.312901" size="0.79376 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_96"
+          type="box" pos="-12.01865 32.55015 1.25" euler="0 0 -2.3545" size="3.435865 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+    <geom name="Wall_98"
+          type="box" pos="-15.10175 29.46705 1.25" euler="0 0 0.749699" size="0.174058 0.075 1.25"
+          material="wall_mat" friction="1 0.05 0.01" group="3"/>
+  </worldbody>
+</mujoco>
