@@ -1,0 +1,36 @@
+Panels:
+  - Class: rviz_common/Displays
+    Name: Displays
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz_default_plugins/Grid
+      Enabled: true
+      Name: Grid
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Name: TF
+    - Class: rviz_default_plugins/Map
+      Enabled: true
+      Name: Map
+      Topic:
+        Value: /map
+    - Class: rviz_default_plugins/LaserScan
+      Enabled: true
+      Name: ScanFlat
+      Topic:
+        Value: /scan_flat
+      Size (m): 0.03
+    - Class: rviz_default_plugins/PointCloud2
+      Enabled: true
+      Name: LivoxAligned
+      Topic:
+        Value: /livox/lidar_aligned
+      Size (Pixels): 2
+  Enabled: true
+  Global Options:
+    Fixed Frame: map
+  Name: root
+Window Geometry:
+  Height: 900
+  Width: 1400

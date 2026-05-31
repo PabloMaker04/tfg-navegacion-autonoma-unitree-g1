@@ -1,0 +1,30 @@
+gravity_quaternion_estimator:
+  ros__parameters:
+    imu_topic: /livox/imu
+    quaternion_topic: /gravity_alignment/quaternion
+    status_topic: /gravity_alignment/status
+    output_frame_id: livox_gravity_aligned
+    target_axis: "+z"
+    calibration_sample_count: 200
+    startup_discard_samples: 0
+    republish_period_sec: 1.0
+    input_reliability: best_effort
+
+livox_gravity_applicator:
+  ros__parameters:
+    lidar_in_topic: /livox/lidar
+    imu_in_topic: /livox/imu
+    quaternion_topic: /gravity_alignment/quaternion
+    status_topic: /gravity_alignment/status
+    lidar_out_topic: /livox/lidar_aligned
+    imu_out_topic: /livox/imu_aligned
+    output_frame_id: livox_gravity_aligned
+    rotate_imu: true
+    pass_through_until_ready: false
+    input_reliability: best_effort
+    output_reliability: reliable
+    log_every_n_clouds: 20
+    log_every_n_imus: 200
+    post_roll_deg: 0.0
+    post_pitch_deg: 0.0
+    post_yaw_deg: 180.0

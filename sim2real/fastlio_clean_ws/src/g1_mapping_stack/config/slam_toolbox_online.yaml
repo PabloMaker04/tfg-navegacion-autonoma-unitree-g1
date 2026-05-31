@@ -1,0 +1,18 @@
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: false
+    odom_frame: odom
+    map_frame: map
+    base_frame: base_link
+    mode: mapping
+    map_update_interval: 1.0
+    transform_publish_period: 0.02
+    resolution: 0.05
+    minimum_travel_distance: 0.08
+    minimum_travel_heading: 0.06
+    scan_queue_size: 30
+    throttle_scans: 1
+    tf_buffer_duration: 30.0
+    do_loop_closing: true
+    minimum_time_interval: 0.5
+    occupancy_threshold: 0.10

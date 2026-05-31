@@ -1,0 +1,26 @@
+# ROS 2 build
+build/
+install/
+log/
+
+# FAST-LIO outputs
+src/fast_lio/PCD/*.pcd
+src/fast_lio/Log/pos_log.txt
+src/fast_lio/Log/mat_out.txt
+src/fast_lio/Log/mat_pre.txt
+src/fast_lio/Log/imu.txt
+src/fast_lio/Log/dbg.txt
+
+# Mapas generados
+*.pgm
+*.yaml.bak
+
+# ROS bags
+*.db3
+*.mcap
+metadata.yaml
+
+# Editor / OS
+.vscode/
+*.swp
+.DS_Store
